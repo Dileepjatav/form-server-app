@@ -3,7 +3,8 @@ const container=document.querySelector('.container-box')
 
 function getdatafromdb(){
   
-  fetch("http://localhost:3000/mongo_data")
+  // fetch("http://localhost:3000/mongo_data")
+  fetch("https://form-submit-dileepkhurana73.herokuapp.com/mongo_data")
   .then((res)=>{
     return res.json();
     
