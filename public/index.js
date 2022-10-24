@@ -32,7 +32,7 @@ async function post_data_to_server(data){
 
     const payload= JSON.stringify(data)
 
-    const response=await fetch('http://localhost:3000/post_form_data',{
+    const response=await fetch('https://form-submit-dileepkhurana73.herokuapp.com/post_form_data',{
         method:'POST',
         headers: {
             'Accept': 'application/json',
