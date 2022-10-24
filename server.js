@@ -17,6 +17,17 @@ app.use(
 app.use(expres.static(path.join(__dirname,'./views')));
 
 
+app.get('/',(req,res)=>{
+    res.sendFile(path.join(__dirname,"views/public/index.html"))
+})
+app.get('/css',(req,res)=>{
+    res.sendFile(path.join(__dirname,"views/public/index.css"))
+})
+app.get('/javascript',(req,res)=>{
+    res.sendFile(path.join(__dirname,"views/public/index.js"))
+})
+
+
 app.get('/mongo_html',(req,res)=>{
    
     res.sendFile(path.join(__dirname,"views","mongo.html"))
@@ -29,7 +40,6 @@ app.get('/mongo_data',(req,res)=>{
             res.send(err)
             console.log(err)
         }else{
-            console.log(data)
             res.send(data)
         }
 
@@ -37,10 +47,7 @@ app.get('/mongo_data',(req,res)=>{
 })
 
 app.post('/post_form_data', (req,res)=>{
-  
     const {category,model,serial,date,file}=req.body
-    
-   
 
     const clientformdata= new Form_data({
         category,
@@ -49,7 +56,6 @@ app.post('/post_form_data', (req,res)=>{
         date,
         file_Pth:file
     })
-    
 
     clientformdata.save()
     .then(()=>{
@@ -63,8 +69,6 @@ app.post('/post_form_data', (req,res)=>{
             error:e.message
         })
     })
-
-    
 
 })
 
