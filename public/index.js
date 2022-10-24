@@ -53,13 +53,13 @@ async function post_data_to_server(data){
 
 }
 
-async function mongo_html(){
-    console.log("clicked")
-    await fetch('http://localhost:3000/home')
-    .then((res)=>{
+// async function mongo_html(){
+//     console.log("clicked")
+//     await fetch('http://localhost:3000/home')
+//     .then((res)=>{
         
-    })
+//     })
     
     
-}
+// }
 
